@@ -14,7 +14,7 @@ const Orders = () => {
         const getOrders = async() => {
           try{
             const accessToken = localStorage.getItem("profile");
-            const res = await axios.get('http://localhost:5000/api/v1/user/get-orders',{headers : {'Authorization' : `Bearer ${accessToken}`}})
+            const res = await axios.get('https://node-api17.vercel.app/api/v1/user/get-orders',{headers : {'Authorization' : `Bearer ${accessToken}`}})
             console.log(res?.data);
             setOrders(res?.data);
           }

@@ -57,7 +57,7 @@ const Auth = () => {
 
         if (isSignup) {
             try {
-                const res = await axios.post('http://localhost:5000/api/v1/user/add-user',{...form,name : form.firstName + " " + form.lastName})
+                const res = await axios.post('https://node-api17.vercel.app/api/v1/user/add-user',{...form,name : form.firstName + " " + form.lastName})
                 console.log(res.data)
                 if(res.data?.msg){
                     console.log(res);
@@ -72,7 +72,7 @@ const Auth = () => {
               }
         } else {
             try {
-                const res = await axios.post('http://localhost:5000/api/v1/user/login-user',{...form,name : form.firstName + " " + form.lastName})
+                const res = await axios.post('https://node-api17.vercel.app/api/v1/user/login-user',{...form,name : form.firstName + " " + form.lastName})
                 console.log(res.data)
                 if(res.data?.msg){
                     alert(res.data.msg);
