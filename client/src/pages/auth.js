@@ -63,11 +63,12 @@ const Auth = () => {
                     alert(res.data.msg);
                     return;
                 }
-                localStorage.setItem('profile', res.token);
-                localStorage.setItem('user', JSON.stringify({name:res.name}));
+                localStorage.setItem('profile', res?.data.token);
+                localStorage.setItem('user', JSON.stringify({name:res?.data.name}));
               } catch (e) {
                 console.log(e)
                 alert(e?.response.data.msg)
+                return;
               }
         } else {
             try {
@@ -80,6 +81,7 @@ const Auth = () => {
                 localStorage.setItem('user', JSON.stringify({name:res?.data.name}));
               } catch (e) {
                 alert(e?.response.data.msg)
+                return
               }
         }
         navigate("/home");
